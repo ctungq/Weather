@@ -1,7 +1,7 @@
 ﻿namespace Weather.Contracts;
 
 public record WeatherResponse(
-    int Id,
-    int Icon,
-    int Description
+    Coord Coord,
+    Weather[] Weather,
+    Main Main
 );
