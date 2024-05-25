@@ -7,14 +7,18 @@ namespace Weather.Api;
 [ApiController]
 public class WeatherApiController : ControllerBase
 {
-    [HttpGet("/weather")]
-    public IActionResult GetWeather(string CityAndCountry) 
+    private readonly IWeatherService _weatherService;
+
+    public WeatherApiController(IWeatherService weatherService)
     {
-        var response = new WeatherResponse(
-            new Coord(11, 22),
-            [new Contracts.Weather(11, "Clouds", "few clouds", "02d")],
-            new Main(21, 1017, 75, 15, 21, null, null)
-        );
+        _weatherService = weatherService;
+    }
+
+    [HttpGet("/weather")]
+    public IActionResult GetWeather(string cityAndCountry) 
+    {
+        var response = _weatherService.GetWeather(cityAndCountry);
+        
         return Ok(response);
     }
 }

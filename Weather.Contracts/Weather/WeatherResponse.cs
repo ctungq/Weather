@@ -3,5 +3,6 @@
 public record WeatherResponse(
     Coord Coord,
     Weather[] Weather,
-    Main Main
+    Main Main,
+    string Name
 );
