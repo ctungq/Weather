@@ -15,7 +15,7 @@ public class TestWeatherApiController
         var mockWeatherMapGateway = new Mock<IWeatherMapGateway>();
         mockWeatherMapGateway.Setup(gateway => gateway.GetWeather(It.IsAny<string>(), It.IsAny<string>()))
             .Returns(new Contracts.WeatherMapResponse([new Contracts.Weather("cloudy")] , 200));
-        var mockWeatherService = new Mock<IWeatherService>().Object;
+        var mockWeatherService = new WeatherService(mockWeatherMapGateway.Object);// new Mock<IWeatherService>().Object;
         var weatherApiController  = new WeatherApiController(mockWeatherService);
 
         //Act
