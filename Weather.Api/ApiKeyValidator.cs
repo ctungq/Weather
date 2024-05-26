@@ -13,7 +13,7 @@ public class ApiKeyValidator : IApiKeyValidator
     {
         // Retrieve the expected API key from the app settings
         var expectedApiKeys = _configuration.GetSection("ApiKeys").Get<string[]>();
-        Console.WriteLine(string.Join(',', expectedApiKeys));
+        //Console.WriteLine(string.Join(',', expectedApiKeys));
         // Compare the provided API key with the expected API key
         return expectedApiKeys.Contains(apiKey);
     }

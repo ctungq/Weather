@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using Weather.Contracts;
 
 namespace Weather.Api;
 
@@ -15,8 +14,23 @@ public class WeatherApiController : ControllerBase
     }
 
     [HttpGet("/weather")]
-    public IActionResult GetWeather(string city, string country) 
+    public IActionResult GetWeather(string? city, string? country) 
     {
+        if (string.IsNullOrWhiteSpace(city) && string.IsNullOrWhiteSpace(country)) 
+        {
+            return BadRequest("City and country are required.");
+        }
+
+        if (string.IsNullOrWhiteSpace(city)) 
+        {
+            return BadRequest("City is required.");
+        }
+
+        if (string.IsNullOrWhiteSpace(country)) 
+        {
+            return BadRequest("Country is required.");
+        }
+
         var response = _weatherService.GetWeather(city, country);
         
         return Ok(response);

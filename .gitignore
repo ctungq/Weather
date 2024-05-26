@@ -2,3 +2,5 @@ Weather.Api/bin/
 Weather.Api/obj/
 Weather.Contracts/bin/
 Weather.Contracts/obj/
+Weather.Api.UnitTests/bin/
+Weather.Api.UnitTests/obj/
