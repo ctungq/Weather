@@ -7,14 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Contracts", "Weathe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Api", "Weather.Api\Weather.Api.csproj", "{F38B2A31-6D6A-4F5E-A6CA-0979CF5E6480}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requests", "Requests", "{9C455C5D-FD36-4311-8C2D-34A5A114BCB5}"
-	ProjectSection(SolutionItems) = preProject
-		GetWeatherRequest.http = GetWeatherRequest.http
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Weather", "Weather", "{A7044BE4-8BC3-460C-A557-FF739B0C977F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Api.UnitTests", "Weather.Api.UnitTests\Weather.Api.UnitTests.csproj", "{5C87F105-1CB7-4644-BEF5-BA79C4CD3C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.UI", "Weather.UI\Weather.UI.csproj", "{276FA747-6693-417B-B4DD-5FBC9A2E92DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +29,10 @@ Global
 		{5C87F105-1CB7-4644-BEF5-BA79C4CD3C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C87F105-1CB7-4644-BEF5-BA79C4CD3C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C87F105-1CB7-4644-BEF5-BA79C4CD3C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276FA747-6693-417B-B4DD-5FBC9A2E92DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276FA747-6693-417B-B4DD-5FBC9A2E92DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276FA747-6693-417B-B4DD-5FBC9A2E92DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276FA747-6693-417B-B4DD-5FBC9A2E92DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

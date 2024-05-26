@@ -4,3 +4,6 @@ Weather.Contracts/bin/
 Weather.Contracts/obj/
 Weather.Api.UnitTests/bin/
 Weather.Api.UnitTests/obj/
+Weather.UI/bin/
+Weather.UI/obj/
+Weather.UI/wwwroot/

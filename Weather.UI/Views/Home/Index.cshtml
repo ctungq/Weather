@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <form asp-controller="" asp-action="Index">
+        <input type="text" name="city" />
+        <input type="text" name="country" />
+        <input type="submit" name="submit" value="Get Current Weather" />
+    </form>
+
+    <p>@ViewData["CurrentWeatherMessage"]</p>
+    <p style="color: red;">@ViewData["Errors"]</p>
+</div>
