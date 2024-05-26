@@ -11,7 +11,7 @@ Eventhough this can be run with Visual Studio 2022, but I haven't personally tri
 
 ### Set up the project
 1. Download this project to your local drive.
-2. Open the project folder in Visual Studio Code.
+2. Open the solution folder in Visual Studio Code.
 
 ### How to build/run/test using Solution Explorer
 1. Install [C# Dev Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
@@ -25,13 +25,18 @@ Eventhough this can be run with Visual Studio 2022, but I haven't personally tri
 ### How to build/run/test using Terminal command
 1. Open a new Terminal, go to the project folder
 2. To build, type the command:
-    dotnet build .\Weather.sln
-3. To run, type the command:
+   
+        dotnet build .\Weather.sln
+   
+5. To run the api project, type the command:
 
         dotnet run --project .\Weather.API\
+
+6. To run the website project, open a new terminal, type the command:
+   
         dotnet run --project .\Weather.UI\
    
-5. To test, type the command:
+8. To test, type the command:
    
         dotnet test
 
