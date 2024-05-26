@@ -15,9 +15,9 @@ public class WeatherApiController : ControllerBase
     }
 
     [HttpGet("/weather")]
-    public IActionResult GetWeather(string cityAndCountry) 
+    public IActionResult GetWeather(string city, string country) 
     {
-        var response = _weatherService.GetWeather(cityAndCountry);
+        var response = _weatherService.GetWeather(city, country);
         
         return Ok(response);
     }

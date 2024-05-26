@@ -1,5 +1,6 @@
 ﻿namespace Weather.Contracts;
 
 public record WeatherRequest(
-    string CityAndCountry
+    string City,
+    string Country
 );

@@ -4,5 +4,5 @@ namespace Weather.Api;
 
 public interface IWeatherService
 {
-    WeatherResponse GetWeather(string CityAndCountry);
+    WeatherResponse GetWeather(string city, string country);
 }
