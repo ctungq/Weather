@@ -19,8 +19,8 @@ Eventhough this can be run with Visual Studio 2022, but I haven't personally tri
 3. To build: ***right click*** at the solution, and click ***Build***
 4. To run tests: find the project **Weather.Api.UnitTests**, ***right click*** and choose ***Run Tests***
 5. To run:
-   1. Run **Weather.API**, ***right click*** at the project **Weather.API**, choose ***Debug***, then ***Start New Instance***. From the browser go to **http://localhost:5000**
-   2. Run **Weather.UI**, ***right click*** at the project **Weather.UI**, choose ***Debug***, then ***Start New Instance***. From the browser go to **http://localhost:5180**. You need to run **Weather.API** in order for **Weather.UI** to work.
+   1. Run **Weather.API**, ***right click*** at the project **Weather.API**, choose ***Debug***, then ***Start New Instance***. The API URL is **http://localhost:5000**
+   2. Run **Weather.UI**, ***right click*** at the project **Weather.UI**, choose ***Debug***, then ***Start New Instance***. The UI URL is **http://localhost:5180**. You need to run **Weather.API** in order for **Weather.UI** to work.
 
 ### How to build/run/test using Terminal command
 1. Open a new Terminal, go to the project folder
@@ -28,11 +28,11 @@ Eventhough this can be run with Visual Studio 2022, but I haven't personally tri
    
         dotnet build .\Weather.sln
    
-5. To run the api project, type the command:
+5. To run the api project, type the command (the API URL is **http://localhost:5000**):
 
         dotnet run --project .\Weather.API\
 
-6. To run the website project, open a new terminal, type the command:
+6. To run the website project, open a new terminal, type the command (The UI URL is **http://localhost:5180**):
    
         dotnet run --project .\Weather.UI\
    
