@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using Weather.Api;
 
 internal class Program
@@ -10,6 +11,15 @@ internal class Program
         builder.Services.AddScoped<IWeatherService, WeatherService>();
         builder.Services.AddScoped<IWeatherMapGateway, WeatherMapGateway>();
 
+        //rate limit for each api key
+        builder.Services.AddOptions();
+        builder.Services.AddMemoryCache();
+        builder.Services.Configure<ClientRateLimitOptions>(builder.Configuration.GetSection("ClientRateLimiting"));
+        builder.Services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
+        builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+        builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+        builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+        builder.Services.AddInMemoryRateLimiting();
         
         // Add services to the container.
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -36,6 +46,7 @@ internal class Program
                 // If the API key is valid, pass the request to the next middleware in the pipeline
                 await next.Invoke();
             });
+            app.UseClientRateLimiting();
             app.UseHttpsRedirection();
             app.MapControllers();
             app.Run();
